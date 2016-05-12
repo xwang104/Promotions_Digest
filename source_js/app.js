@@ -1,24 +1,16 @@
-var app = angular.module('mp4', ['ngRoute', 'mp4Controllers', 'mp4Services']);
+var app = angular.module('Promotions', ['ngRoute', 'PDControllers']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/firstview', {
-    templateUrl: 'partials/firstview.html',
-    controller: 'FirstController'
+    when('/search', {
+    templateUrl: 'partials/search.html',
+    controller: 'SearchController'
   }).
-  when('/secondview', {
-    templateUrl: 'partials/secondview.html',
-    controller: 'SecondController'
-  }).
-  when('/settings', {
-    templateUrl: 'partials/settings.html',
-    controller: 'SettingsController'
-  }).
-  when('/llamalist', {
-    templateUrl: 'partials/llamalist.html',
-    controller: 'LlamaListController'
+  when('/recommend', {
+    templateUrl: 'partials/recommend.html',
+    controller: 'RecommendController'
   }).
   otherwise({
-    redirectTo: '/settings'
+    redirectTo: '/search'
   });
 }]);

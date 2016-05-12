@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>MP4 Starter</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="961180585767-43l499eej0riiqljcla75psc39cavghj.apps.googleusercontent.com">
+    <title>Promotions Digest</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/styles.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Angular Scripts -->
     <!-- NOTE: removing the ".min." can help debugging in the console-->
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
     <script src="./lib/angular/angular.min.js"></script>
     <script src="./lib/angular-route/angular-route.min.js"></script>
     <script src="./js/app.js"></script>
@@ -17,15 +23,20 @@
     <script src="./js/services.js"></script>
 </head>
 
-<body ng-app="mp4">
+<body ng-app="Promotions" class="text-center">
 
-    <div class="row text-center">
-    	<a class="button" href="#/settings">Settings</a>
-    	<a class="button" href="#/llamalist">Llama List</a>
-        <a class="button" href="#/firstview">First View</a>
-        <a class="button" href="#/secondview">Second View</a>
-    </div>
+    <header class="text-center">
+        <h1>Promotions Digest</h1>
 
+        <!--button type="button" class="button" id="signin">Sign In <i class="fa fa-angle-double-right" aria-hidden="true"></i> </button-->
+        <a href="https://accounts.google.com/o/oauth2/auth?redirect_uri=http://www.catemail.tk/oauth2callback&response_type=code&client_id=961180585767-43l499eej0riiqljcla75psc39cavghj.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/gmail.readonly&approval_prompt=force&access_type=offline" class="button" id="signin">Sign In >></a>
+
+        <div style="display:none">
+          <a href="#/search">Search</a>
+          <span>|</span>
+          <a href="#/recommend">Recommend</a>
+        </div>
+    </header>
     <div ng-view></div>
 
     <!-- Scripts -->
