@@ -13,7 +13,6 @@
     <!-- Angular Scripts -->
     <!-- NOTE: removing the ".min." can help debugging in the console-->
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     
     <script src="./lib/angular/angular.min.js"></script>
@@ -25,27 +24,17 @@
 
 <body ng-app="Promotions" class="text-center">
 
-    <header class="text-center">
-        <h1>Promotions Digest</h1>
-
-        <!--button type="button" class="button" id="signin">Sign In <i class="fa fa-angle-double-right" aria-hidden="true"></i> </button-->
-        <a href="https://accounts.google.com/o/oauth2/auth?redirect_uri=http://www.catemail.tk/oauth2callback&response_type=code&client_id=961180585767-43l499eej0riiqljcla75psc39cavghj.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/gmail.readonly&approval_prompt=force&access_type=offline" class="button" id="signin">Sign In >></a>
-
-        <div style="display:none">
-          <a href="#/search">Search</a>
-          <span>|</span>
-          <a href="#/recommend">Recommend</a>
-        </div>
-    </header>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <div ng-view></div>
 
     <!-- Scripts -->
     <script src="./lib/jquery-2.1.3.min/index.js"></script>
     <script src="./foundation6_lib/js/foundation.min.js"></script>
-    <script src="./js/script.js"></script>
     <script>
     $(document).foundation();
     </script>
-    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://www.promotiondigest.tk:35729/livereload.js"></script>
 </body>
 </html>

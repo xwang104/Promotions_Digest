@@ -1,5 +1,9 @@
 .DS_Store
 
+*.swp
+*.log
+*.pyc
+
 .sass-cache/
 node_modules/
 npm-debug.log
