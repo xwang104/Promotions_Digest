@@ -22,10 +22,14 @@
     <script src="./js/services.js"></script>
 </head>
 
-<body ng-app="Promotions" class="text-center">
+<body ng-app="Promotions">
+    <div id="acount-manage">
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="float:left"></div>
+      <button id="signout" onclick="signOut();" style="float:left">Sign out</button>
 
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <div ng-view></div>
+      <div style="clear:both"></div>
+    </div>
+    <div ng-view class="text-center"></div>
 
     <!-- Scripts -->
     <script src="./lib/jquery-2.1.3.min/index.js"></script>

@@ -1,31 +1,29 @@
 <div id='search-div'>
   <h1>Promotions Digest</h1>
-
-  
-{{crawlerStatus}}
   <a ng-if="crawlerStatus==='stopped'" href="https://accounts.google.com/o/oauth2/auth?redirect_uri=http://www.catemail.tk/oauth2callback&response_type=code&client_id=961180585767-43l499eej0riiqljcla75psc39cavghj.apps.googleusercontent.com&scope=https://www.googleapis.com/auth/gmail.readonly&approval_prompt=force&access_type=offline" class="button" id="start-crawler">Start Crawling</a>
   <div ng-if="crawlerStatus==='running'" ng-click="stopCrawler(email)" class="button" id="stop-crawler">Stop Crawling</div>
 
-  <div ng-click="getPromotions()" class="button"> Get Promotions</div>
+  <!--div ng-click="getPromotions()" class="button"> Get Promotions</div-->
 
   <div></div>
-  <div ng-repeat="category in allCategory" id="div-{{category}}" class="button" ng-click="getPromotions(category, curProduct)">
+  <div style="width:6em;" ng-repeat="category in allCategory" id="div-{{category}}" class="button" ng-click="getPromotions(category, curProduct)">
     {{category}}
   </div>
   <div></div>
-  <div ng-repeat="product in allProducts" id="div-{{product}}" class="button" ng-click="getPromotions(curCategory, product)">{{product}}</div>
+  <div style="width:5em;" ng-repeat="product in allProducts" id="div-{{product}}" class="button" ng-click="getPromotions(curCategory, product)">{{product}}</div>
 
-  <ul>
+  <div class="row text-left" id="emails">
+  <ul class="small-8 small-centered coulumns">
     <li ng-repeat="doc in promotions">
-      <div>Subject: {{doc.subject}}</div>
-      <div>Sender: {{doc.sender}}</div>
-      <div>Category: {{doc.category}}</div>
-      <div>Products: {{doc.products}}</div>
-      <div>Body: {{doc.body}}</div>
+      <div><span>Subject: </span><a>{{doc.subject}}</a></div>
+      <div><span>Sender: </span>{{doc.sender}}</div>
+      <div><span>Category: </span> {{doc.category}}</div>
+      <div><span>Products: </span>{{doc.products}}</div>
+      <div><span>Time: </span>{{doc.timestamp}}</div>
     </li>
     
   </ul>
-
+  </div>
   <div style="display:none">
     <a href="#/search">Search</a>
     <span>|</span>
